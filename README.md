@@ -1,5 +1,5 @@
 # GIFMaker
-
+# Kelompok10
 Author: <br>
 5322600005 Qoulan Sadiyda <br>
 5322600006 Harun Budiseto <br> 
