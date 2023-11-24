@@ -1,10 +1,10 @@
 # GIFMaker
 
-Author: /n
-5322600005 Qoulan Sadiyda /n
-5322600006 Harun Budiseto /n
-5322600030 Rakan Mudrik Bagas Sanjani /n
+Author: <br>
+5322600005 Qoulan Sadiyda <br>
+5322600006 Harun Budiseto <br> 
+5322600030 Rakan Mudrik Bagas Sanjani <br>
 
-Fitur GIF Maker: /n
-Video to GIF /n
-Image to GIF /n
+Fitur GIF Maker: <br>
+Video to GIF <br>
+Image to GIF <br>
