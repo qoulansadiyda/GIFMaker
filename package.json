@@ -1,0 +1,23 @@
+{
+  "name": "gifmaker",
+  "version": "1.0.0",
+  "description": "Author: <br> 5322600005 Qoulan Sadiyda <br> 5322600006 Harun Budiseto <br>  5322600030 Rakan Mudrik Bagas Sanjani <br>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qoulansadiyda/GIFMaker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qoulansadiyda/GIFMaker/issues"
+  },
+  "homepage": "https://github.com/qoulansadiyda/GIFMaker#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
