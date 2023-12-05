@@ -3,42 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <title>Give me GIF</title>
+    <title>Image to GIF Converter</title>
 </head>
 <body>
-    <div class="container mt-5">
-        <h2 class="mb-4">Give me GIF</h2>
-        <button class="btn btn-primary" onclick="showImageToGifForm()">Image to GIF</button>
-        <button class="btn btn-primary" onclick="showVideoToGifForm()">Video to GIF</button>
+    <h1>Image to GIF Converter</h1>
+    
+    <form action="convert.php" method="post" enctype="multipart/form-data">
+        <label for="images">Select Images:</label>
+        <input type="file" name="images[]" id="images" multiple accept="image/*" required>
+        <br>
+        <label for="fps">Frames per Second (FPS):</label>
+        <input type="number" name="fps" id="fps" value="10" min="1" required>
+        <br>
+        <input type="submit" value="Convert to GIF">
+    </form>
 
-        <div id="imageToGifForm" style="display:none;">
-            <form action="convert.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="images[]" multiple accept="image/*" class="form-control-file mt-3">
-                <button type="submit" class="btn btn-success mt-3">Convert to GIF</button>
-            </form>
-        </div>
-
-        <div id="videoToGifForm" style="display:none;">
-            <form action="convert.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="video" accept="video/*" class="form-control-file mt-3">
-                <button type="submit" class="btn btn-success mt-3">Convert to GIF</button>
-            </form>
-        </div>
-
-        <div id="result" class="mt-5"></div>
-
-        <script>
-            function showImageToGifForm() {
-                document.getElementById('imageToGifForm').style.display = 'block';
-                document.getElementById('videoToGifForm').style.display = 'none';
-            }
-
-            function showVideoToGifForm() {
-                document.getElementById('imageToGifForm').style.display = 'none';
-                document.getElementById('videoToGifForm').style.display = 'block';
-            }
-        </script>
-    </div>
+    <!-- Tambahkan script untuk membersihkan file yang tidak diunduh -->
+    <script>
+        window.addEventListener('beforeunload', function () {
+            // Membuat panggilan AJAX untuk membersihkan file yang tidak diunduh dari server
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'cleanup.php', true);
+            xhr.send();
+        });
+    </script>
 </body>
 </html>
