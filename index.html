@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Give me GIF</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Give me GIF</h1>
+    <h1 >Give me GIF</h1>
 
-    <!-- Menu pilihan -->
+    <!-- Menu Pilihan -->
     <div>
-        <button onclick="showImageForm()">Image to GIF</button>
-        <button onclick="showVideoForm()">Video to GIF</button>
+        <button class="button" onclick="showImageForm()">Image to GIF</button>
+        <button class="button" onclick="showVideoForm()">Video to GIF</button>
     </div>
 
-    <!-- Form untuk konversi gambar -->
+    <!-- Form Konversi Image -->
     <form id="imageForm" action="convert.php" method="post" enctype="multipart/form-data" style="display:none;">
         <label for="images">Select Images:</label>
         <input type="file" name="images[]" id="images" multiple accept="image/*" required>
@@ -25,7 +26,7 @@
         <input type="submit" value="Convert to GIF">
     </form>
 
-    <!-- Form untuk konversi video -->
+    <!-- Form Konversi Video -->
     <form id="videoForm" action="convert_video.php" method="post" enctype="multipart/form-data" style="display:none;">
         <label for="video">Select Video:</label>
         <input type="file" name="video" id="video" accept="video/*" required>

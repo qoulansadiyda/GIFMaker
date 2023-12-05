@@ -2,9 +2,8 @@
 session_start();
 
 // Tentukan direktori tempat menyimpan file
-$outputDir = 'temp_images'; // Ganti dengan direktori yang sesuai
+$outputDir = 'temp_images';
 
-// Pastikan $_SESSION['downloaded_files'] telah diinisialisasi
 if (!isset($_SESSION['downloaded_files'])) {
     $_SESSION['downloaded_files'] = [];
 }
