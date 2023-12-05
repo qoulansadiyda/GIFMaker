@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image to GIF Converter</title>
+    <title>Give me GIF</title>
 </head>
 <body>
-    <h1>Image to GIF Converter</h1>
-    
-    <form action="convert.php" method="post" enctype="multipart/form-data">
+    <h1>Give me GIF</h1>
+
+    <!-- Menu pilihan -->
+    <div>
+        <button onclick="showImageForm()">Image to GIF</button>
+        <button onclick="showVideoForm()">Video to GIF</button>
+    </div>
+
+    <!-- Form untuk konversi gambar -->
+    <form id="imageForm" action="convert.php" method="post" enctype="multipart/form-data" style="display:none;">
         <label for="images">Select Images:</label>
         <input type="file" name="images[]" id="images" multiple accept="image/*" required>
         <br>
@@ -18,14 +25,27 @@
         <input type="submit" value="Convert to GIF">
     </form>
 
-    <!-- Tambahkan script untuk membersihkan file yang tidak diunduh -->
+    <!-- Form untuk konversi video -->
+    <form id="videoForm" action="convert_video.php" method="post" enctype="multipart/form-data" style="display:none;">
+        <label for="video">Select Video:</label>
+        <input type="file" name="video" id="video" accept="video/*" required>
+        <br>
+        <label for="fps_video">Frames per Second (FPS):</label>
+        <input type="number" name="fps_video" id="fps_video" value="10" min="1" required>
+        <br>
+        <input type="submit" value="Convert to GIF">
+    </form>
+
     <script>
-        window.addEventListener('beforeunload', function () {
-            // Membuat panggilan AJAX untuk membersihkan file yang tidak diunduh dari server
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'cleanup.php', true);
-            xhr.send();
-        });
+        function showImageForm() {
+            document.getElementById("imageForm").style.display = "block";
+            document.getElementById("videoForm").style.display = "none";
+        }
+
+        function showVideoForm() {
+            document.getElementById("imageForm").style.display = "none";
+            document.getElementById("videoForm").style.display = "block";
+        }
     </script>
 </body>
 </html>
