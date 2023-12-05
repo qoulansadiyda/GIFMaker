@@ -36,3 +36,51 @@ h1 {
     -webkit-background-clip: text;
     color: transparent;
 }
+
+form input[type="file"],
+form input[type="submit"] {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background: linear-gradient(45deg, #B16CEA, #FF5E69, #FF8A56, #FFA84B);
+    color: #FFFFFF;
+    border: none;
+    margin: 10px;
+}
+
+form input[type="file"]:hover,
+form input[type="submit"]:hover {
+    filter: brightness(90%);
+}
+
+.result-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.result-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background: linear-gradient(45deg, #B16CEA, #FF5E69, #FF8A56, #FFA84B);
+    color: #FFFFFF;
+    border: none;
+    margin-top: 10px;
+}
+
+.download-button:hover {
+    filter: brightness(90%);
+}

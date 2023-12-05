@@ -7,19 +7,19 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fps = $_POST["fps"];
     
-    // Create a temporary directory to store images
+    // Bikin direktori sementara untuk menyimpan image
     $tempDir = "temp_images";
     if (!is_dir($tempDir)) {
         mkdir($tempDir);
     } else {
-        // Clear existing files in temp_images directory
+        // Hapus semua file yang ada di temp_images
         $filesInTempDir = glob("$tempDir/*");
         foreach ($filesInTempDir as $fileInTempDir) {
             unlink($fileInTempDir);
         }
     }
 
-    // Process each uploaded image
+    // Proses setiap image yang diinput
     $imagePaths = [];
     foreach ($_FILES["images"]["error"] as $key => $error) {
         if ($error == UPLOAD_ERR_OK) {
@@ -45,14 +45,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exec($ffmpegCommand);
 
     // Display the converted GIF
-    echo "<h2>Converted GIF:</h2>";
-    $randomParam = "?rand=" . uniqid(); // Add random parameter to URL
-    echo "<img src='$outputGif$randomParam' alt='Converted GIF' style='max-width: 50%; height: 50%;'>";
-
-    // Display download link
-    echo "<br>";
-    $downloadLink = "download.php?file=$outputGif";
-    echo "<a href='$downloadLink' download><button>Download GIF</button></a>";
+    echo "<!DOCTYPE html>
+          <html lang='en'>
+          <head>
+              <meta charset='UTF-8'>
+              <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+              <title>Converted GIF</title>
+              <link rel='stylesheet' href='styles.css'>
+          </head>
+          <body>
+              <div class='result-container'>
+                  <h2>Converted GIF Preview:</h2>
+                  <img class='result-image' src='$outputGif' alt='Converted GIF' style='max-width: 50%; height: 50%;'>
+                  <br>
+                  <a href='download.php?file=$outputGif' download class='download-button'>Download GIF</a>
+              </div>
+          </body>
+          </html>";
 
     // Store information in session to track downloaded files
     $_SESSION['downloaded_files'][] = $outputGif;
