@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Display the converted GIF
     echo "<h2>Converted GIF:</h2>";
     $randomParam = "?rand=" . uniqid(); // Add random parameter to URL
-    echo "<img src='$outputGif$randomParam' alt='Converted GIF' style='max-width: 100%; height: auto;'>";
+    echo "<img src='$outputGif$randomParam' alt='Converted GIF' style='max-width: 50%; height: 50%;'>";
 
     // Display download link
     echo "<br>";
