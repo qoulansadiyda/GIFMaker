@@ -23,12 +23,10 @@ body {
     color: #FFFFFF;
     border: none;
     margin: 10px; /* Agar tombol tidak saling menempel */
-    transition: transform 0.3s ease-in-out;
 }
 
 .button:hover {
-    filter: brightness(110%);
-    transform: scale(1.1);
+    filter: brightness(90%);
 }
 
 h1 {
@@ -37,11 +35,6 @@ h1 {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    transition: transform 0.5s ease-in-out;
-}
-
-h1:hover {
-    transform: rotate(360deg);
 }
 
 form input[type="file"],
@@ -64,29 +57,25 @@ form input[type="submit"]:hover {
     filter: brightness(90%);
 }
 
+.result-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
 form small {
     display: block;
     color: #FFFFFF;
     margin-top: 5px;
 }
 
-.result-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.result-container:hover {
-    transform: scale(1.1);
+.result-container h2 {
+    margin-bottom: 10px; /* Tambahkan margin di bagian bawah h2 */
 }
 
 .result-image {
     max-width: 100%;
     height: auto;
-}
-
-.result-image:hover {
-    filter: brightness(110%);
-    transform: scale(1.1);
+    margin-top: 10px;
 }
 
 .download-button {
@@ -101,10 +90,8 @@ form small {
     color: #FFFFFF;
     border: none;
     margin-top: 10px;
-    transition: transform 0.3s ease-in-out;
 }
 
 .download-button:hover {
-    filter: brightness(110%);
-    transform: scale(1.1);
+    filter: brightness(90%);
 }
