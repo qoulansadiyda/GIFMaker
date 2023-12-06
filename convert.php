@@ -46,22 +46,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Display the converted GIF
     echo "<!DOCTYPE html>
-          <html lang='en'>
-          <head>
-              <meta charset='UTF-8'>
-              <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-              <title>Converted GIF</title>
-              <link rel='stylesheet' href='styles.css'>
-          </head>
-          <body>
-              <div class='result-container'>
-                  <h2>Converted GIF Preview:</h2>
-                  <img class='result-image' src='$outputGif' alt='Converted GIF' style='max-width: 50%; height: 50%;'>
-                  <br>
-                  <a href='download.php?file=$outputGif' download class='download-button'>Download GIF</a>
-              </div>
-          </body>
-          </html>";
+    <html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>Converted GIF</title>
+        <link rel='stylesheet' href='styles.css'>
+    </head>
+    <body>
+        <div class='result-container'>
+            <h2>Converted GIF Preview:</h2>
+            <img class='result-image' src='$outputGif' alt='Converted GIF' style='max-width: 50%; height: 50%;'>
+            <br>
+            <a href='download.php?file=$outputGif' download class='download-button'>Download GIF</a>
+        </div>
+    </body>
+    </html>";
+
 
     // Store information in session to track downloaded files
     $_SESSION['downloaded_files'][] = $outputGif;

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Download the converted GIF
+// Download GIF 
 $file = $_GET['file'];
 
 if (file_exists($file)) {
@@ -14,15 +14,15 @@ if (file_exists($file)) {
     header('Content-Length: ' . filesize($file));
     readfile($file);
     
-    // Remove the file from the list of downloaded files
+    // Hapus file dari daftar file yang didownload
     if (($key = array_search($file, $_SESSION['downloaded_files'])) !== false) {
         unset($_SESSION['downloaded_files'][$key]);
     }
     
-    // Delete the file from the server
+    // Delete file dari server
     unlink($file);
 
-    // Delete the temporary images directory
+    // Delete temp_images
     $tempDir = 'temp_images';
     if (is_dir($tempDir)) {
         $filesInTempDir = glob("$tempDir/*");

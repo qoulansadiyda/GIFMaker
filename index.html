@@ -19,6 +19,7 @@
     <form id="imageForm" action="convert.php" method="post" enctype="multipart/form-data" style="display:none;">
         <label for="images">Select Images:</label>
         <input type="file" name="images[]" id="images" multiple accept="image/*" required>
+        <small>Max file size: 200MB</small>
         <br>
         <label for="fps">Frames per Second (FPS):</label>
         <input type="number" name="fps" id="fps" value="10" min="1" required>
@@ -30,6 +31,7 @@
     <form id="videoForm" action="convert_video.php" method="post" enctype="multipart/form-data" style="display:none;">
         <label for="video">Select Video:</label>
         <input type="file" name="video" id="video" accept="video/*" required>
+        <small>Max file size: 200MB</small>
         <br>
         <label for="fps_video">Frames per Second (FPS):</label>
         <input type="number" name="fps_video" id="fps_video" value="10" min="1" required>
