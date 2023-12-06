@@ -41,7 +41,7 @@ h1 {
 }
 
 h1:hover {
-    transform: rotate(360deg);
+    filter: brightness(110%);
 }
 
 form input[type="file"],
